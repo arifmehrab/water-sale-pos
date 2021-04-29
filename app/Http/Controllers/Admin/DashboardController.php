@@ -67,8 +67,16 @@ class DashboardController extends Controller
         //today shop cost
         $today_shopcost =shopcost::where('date', $date)->sum('cost_amount');
 
+
+        //market due
+        $total_sell_amount = invoicedetail::where('status', 1)->sum('selling_price');
+        
+        $market_due = $total_sell_amount - $collect;
+
+        
+
         return view('Admin.dashboard',compact('total_cash','stock','today_collection','today_shopcost',
-        'today_sell','Mercantile_total','NRB_total','today_sell_unit'));
+        'today_sell','Mercantile_total','NRB_total','today_sell_unit','market_due'));
     }
     // Admin Logout
     public function logout()

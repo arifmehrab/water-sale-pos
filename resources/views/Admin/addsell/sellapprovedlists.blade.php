@@ -34,6 +34,7 @@
                     <a  title="Approved" href="{{ route('admin.invoice.approved.view', $row->id) }}" class="btn btn-primary btn-sm">
                         <i class="fas fa-eye"></i>
                     </a>
+                  @if(Auth::user()->name == 'Imon')
                     <a  title="Approved" target="__blank" href="{{ route('admin.invoice.sell.prient', $row->id) }}" class="btn btn-success btn-sm">
                         <i class="fas fa-print"></i>
                     </a>
@@ -44,6 +45,7 @@
                     @csrf
                     @method('DELETE') 
                   </form>
+                  @endif
                 </td>
             </tr>
             @endforeach

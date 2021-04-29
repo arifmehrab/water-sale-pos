@@ -7,13 +7,14 @@
     <div class="card-header">
         ADD PRODUCT
     </div>
+    @if(Auth::user()->name == 'Imon')
     <div class="card-body">
         <form action="{{ route('admin.product.add') }}" method="POST">
             @csrf
 
             <div class="form-group">
                 <label class="form-control-label" for="date">DATE</label>
-                <input type="date" class="form-control" id="date" name="date" required>
+                <input style="width: 15%;" type="date" class="form-control" id="date" name="date" required>
             </div>
 
             <div class="form-group">
@@ -28,7 +29,7 @@
 
           </form>
     </div>
-
+@endif
 
     <!-- Table -->
  <div class="row">

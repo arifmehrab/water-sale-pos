@@ -8,13 +8,14 @@
       <h3 class="mb-0">Collection Lists</h3>
     </div>
     <!-- Card body -->
+    @if(Auth::user()->name == 'Imon')
     <div class="card-body">
         <form action="{{ route('admin.collection.store') }}" method="POST">
             @csrf
 
             <div class="form-group">
                 <label class="form-control-label" for="date">Date</label>
-                <input type="date" class="form-control" id="date" name="date" required>
+                <input type="date" style="width: 15%;" class="form-control" id="date" name="date" required>
             </div>
 
             <input type="hidden" name="collection_no" value="{{ $collection_no }}">
@@ -41,11 +42,12 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="যুক্ত করুন">
+                <input type="submit" class="btn btn-primary" value="SUBMIT">
             </div>
 
           </form>
     </div>
+    @endif
 </div>
 
 <!-- Table -->
@@ -78,6 +80,7 @@
                     <td>{{ $row->addshop->shop_name }}</td>
                     <td>{{ $row->amount }}</td>
                     <td>{{ $row->discount }}</td>
+                    @if(Auth::user()->name == 'Imon')
                     <td>
                         <a title="Edit" class="btn btn-success btn-sm" href="{{ route('admin.collection.edit',$row->id) }}">
                             <i class="fa fa-edit"></i>
@@ -90,6 +93,7 @@
                             @method('DELETE')
                          </form>
                     </td>
+                    @endif
                 </tr>
               @endforeach
           </tbody>

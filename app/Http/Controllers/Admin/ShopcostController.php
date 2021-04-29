@@ -28,7 +28,7 @@ class ShopcostController extends Controller
 
           // Notification
           $notification = array(
-            'message'    => 'দোকানের খরচ সংরক্ষিত হল',
+            'message'    => 'Added Successfull',
             'alert-type' => 'success',
         );
         return redirect()->back()->with($notification);
@@ -46,14 +46,22 @@ class ShopcostController extends Controller
     public function update(Request $request,$id){
         $shopcost_update = shopcost::find($id);
         $shopcost_update->user_name = Auth::user()->name;
-        $shopcost_update->date = $request->date;
         $shopcost_update->cost_details= $request->cost_details;
         $shopcost_update->cost_amount = $request->cost_amount;
+        $shopcost_update->date = $request->date;
         $shopcost_update->save();
+
+        $update_amount_bank = bank::where('cost_id', $id)->first();
+        $update_amount_bank->user_name = Auth::user()->name;
+        $update_amount_bank->bank_name = $request->cost_details;
+        $update_amount_bank->bank_amount = $request->cost_amount;
+        $update_amount_bank->date = $request->date;
+        $update_amount_bank->save();
+
 
         // Notification
         $notification = array(
-            'message'    => 'দোকানের খরচ  আপডেট করা হলো',
+            'message'    => 'Update Successfull',
             'alert-type' => 'success',
         );
         return redirect()->route('admin.shopcost.index')->with($notification);
@@ -67,13 +75,6 @@ class ShopcostController extends Controller
 
     //bank amount add
     public function costbankamount(Request $request){
-        $add_amount = new bank();
-        $add_amount->user_name = Auth::user()->name;
-        $add_amount->bank_name = $request->bank_name;
-        $add_amount->bank_amount = $request->cost_amount;
-        $add_amount->date = $request->date;
-        $add_amount->save();
-
         $add_amount = new shopcost();
         $add_amount->user_name = Auth::user()->name;
         $add_amount->cost_details = $request->bank_name;
@@ -81,11 +82,37 @@ class ShopcostController extends Controller
         $add_amount->date = $request->date;
         $add_amount->save();
 
+        $add_amount_bank = new bank();
+        $add_amount_bank->user_name = Auth::user()->name;
+        $add_amount_bank->bank_name = $request->bank_name;
+        $add_amount_bank->bank_amount = $request->cost_amount;
+        $add_amount_bank->cost_id = $add_amount->id;
+        $add_amount_bank->date = $request->date;
+        $add_amount_bank->save();
+
+
         $notification = array(
-            'message'    => 'টাকা সংরক্ষণ সফল হয়েছে',
+            'message'    => 'Added Successfull',
             'alert-type' => 'success',
         );
         return redirect()->back()->with($notification);
+    }
+
+
+    // Sell Delete
+    public function costDelete($id)
+    {
+       $cost_delete = shopcost::findOrFail($id);
+       $cost_delete->delete();
+       bank::where('cost_id', $cost_delete->id)->delete();
+
+       // Notification
+       $notification = array(
+        'message'    => ' Deleted Successfully',
+        'alert-type' => 'success',
+      );
+      return redirect()->back()->with($notification); 
+
     }
 
 

@@ -49,4 +49,28 @@ class StockController extends Controller
             return redirect()->back()->with($notification);
         }
     }
+
+    public function edit($id)
+    {
+        $data = stock::find($id);
+        return view('Admin.stock.edit',compact('data'));
+
+    }
+
+    //update
+    public function update(Request $request,$id){
+        $stock_update = stock::find($id);
+        $stock_update->quantity= $request->	quantity;
+        $stock_update->save();
+
+
+        // Notification
+        $notification = array(
+            'message'    => 'Update Successfull',
+            'alert-type' => 'success',
+        );
+        return redirect()->route('admin.stock.index')->with($notification);
+    }
+
+
 }

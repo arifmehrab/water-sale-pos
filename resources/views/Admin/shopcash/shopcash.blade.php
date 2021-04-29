@@ -46,7 +46,7 @@
                             @foreach($collection as $row)
                             <tr>
                                 <td>{{ $row->date }}</td>
-                                <td>{{ $row->shop_id }}</td>
+                                <td>{{ $row->addshop->shop_name }}</td>
                                 <td>{{ $row->amount }}</td>
                                 <td>{{ $row->user_name }}</td>
 
