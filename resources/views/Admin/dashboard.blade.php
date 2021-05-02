@@ -22,7 +22,7 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Today Sell Quantity</h5>
-                  <span class="h2 font-weight-bold mb-0">{{ $today_sell_unit }}</span>
+                  <span class="h2 font-weight-bold mb-0">{{ $today_sell_unit }} Roll.</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -38,7 +38,7 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Today Sell</h5>
-                  <span class="h2 font-weight-bold mb-0 ">{{ $today_sell }}</span>
+                  <span class="h2 font-weight-bold mb-0 ">{{ $today_sell }} Tk.</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -54,7 +54,7 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Today Collection</h5>
-                  <span class="h2 font-weight-bold mb-0">{{ $today_collection }}</span>
+                  <span class="h2 font-weight-bold mb-0">{{ $today_collection }} TK.</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -70,7 +70,7 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Today Shop Cost</h5>
-                  <span class="h2 font-weight-bold mb-0">{{ $today_shopcost }}</span>
+                  <span class="h2 font-weight-bold mb-0">{{ $today_shopcost }}TK.</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -80,11 +80,7 @@
               </div>
             </div>
           </div>
-
-         
-
-
-          
+   
       </div>
       <div class="col-md-4">
             <div class="card card-stats">
@@ -93,7 +89,7 @@
                 <div class="row">
                   <div class="col">
                     <h5 class="card-title text-uppercase text-muted mb-0">Mercantile Bank Limited</h5>
-                    <span class="h2 font-weight-bold mb-0">{{ $Mercantile_total }}</span>
+                    <span class="h2 font-weight-bold mb-0">{{ $Mercantile_total }} TK.</span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -110,7 +106,7 @@
                 <div class="row">
                   <div class="col">
                     <h5 class="card-title text-uppercase text-muted mb-0">NRB Bank Ltd</h5>
-                    <span class="h2 font-weight-bold mb-0">{{ $NRB_total }}</span>
+                    <span class="h2 font-weight-bold mb-0">{{ $NRB_total }} TK.</span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -128,7 +124,7 @@
                 <div class="row">
                   <div class="col">
                     <h5 class="card-title text-uppercase text-muted mb-0">Market Due</h5>
-                    <span class="h2 font-weight-bold mb-0">{{ $market_due }}</span>
+                    <span class="h2 font-weight-bold mb-0">{{ $market_due }} TK.</span>
                   </div>
                   <div class="col-auto">
                     <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -148,7 +144,7 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Total Product Unit</h5>
-                  <span class="h2 font-weight-bold mb-0">{{ $stock }}</span>
+                  <span class="h2 font-weight-bold mb-0">{{ $stock }} Roll.</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -167,7 +163,7 @@
               
                   <h5 style="color: white;font-weight: bold;font-size: 17px;">Closing Balance</h5>
               
-                  <span style="font-size: 20px;">{{ $total_cash }}</span>
+                  <span style="font-size: 20px;">{{ $total_cash }} TK.</span>
                 
             </div>
           </div>

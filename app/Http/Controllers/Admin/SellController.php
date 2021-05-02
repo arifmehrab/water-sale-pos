@@ -112,7 +112,7 @@ class SellController extends Controller
             'message'    => 'Products Approved Successfully',
             'alert-type' => 'success',
         );
-        return redirect()->route('admin.invoice.approve.list')->with($notification);        
+        return redirect()->route('admin.sell.pendinglist')->with($notification);        
     }
 
     // Approved Lists

@@ -22515,7 +22515,7 @@ textarea[resize='horizontal']
 .sidenav-toggler-inner,
 .sidenav-toggler-line
 {
-    width: 18px;
+    width: 45px;
 
     transition: all .15s ease;
 }
@@ -22561,7 +22561,7 @@ textarea[resize='horizontal']
 
     display: block;
 
-    height: 2px;
+    height: 7px;
 
     background-color: #172b4d;
 }
