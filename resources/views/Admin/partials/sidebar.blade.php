@@ -10,7 +10,7 @@
         <div class="sidenav-header d-flex align-items-center">
             <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
                 {{--  <img src="{{asset('public/Backend')}}/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">  --}}
-                <h1 style="color: red;">Imazine <span style="color: blue;">Wall</span></h1>
+                <h1 style="color: red;">Imagine <span style="color: blue;">Walls</span></h1>
             </a>
             <div class="ml-auto">
                 <!-- Sidenav toggler -->
