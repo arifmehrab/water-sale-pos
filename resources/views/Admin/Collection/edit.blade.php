@@ -12,7 +12,7 @@
 <div class="card mb-4">
     <!-- Card header -->
     <div class="card-header">
-      <h3 class="mb-0">ডিলার যুক্ত করুন এখান থেকে</h3>
+      <h3 class="mb-0">Edit Collection</h3>
     </div>
     <!-- Card body -->
     <div class="card-body">
@@ -26,7 +26,7 @@
 
             <div class="form-group">
                 <label class="form-control-label" for="date">Date</label>
-                <input type="date" class="form-control" id="date" name="date" value="{{ $collection_edit->date }}">
+                <input type="date" style="width: 15%;" class="form-control" id="date" name="date" value="{{ $collection_edit->date }}">
             </div>
 
             <div class="form-group">
@@ -52,7 +52,7 @@
 
             <div class="form-group">
 
-                <input type="submit" class="btn btn-primary" value="যুক্ত করুন">
+                <input type="submit" class="btn btn-primary" value="SUBMIT">
             </div>
 
           </form>

@@ -3,15 +3,16 @@
 @section('content_head')
 <div class="card">
     <div class="card-header">
-        নতুন দোকান যুক্ত করুন
+        Add Stock
     </div>
+    @if(Auth::user()->name == 'Imon')
     <div class="card-body">
         <form action="{{ route('admin.stock.store') }}" method="POST">
             @csrf
 
             <div class="form-group">
                 <label class="form-control-label" for="shop_adress">Stock Date</label>
-                <input type="date" class="form-control" id="date" name="date" required>
+                <input type="date" style="width: 15%;" class="form-control" id="date" name="date" required>
             </div>
             <div class="form-group">
                 <label class="form-control-label" for="customer_id">Product code</label>
@@ -29,11 +30,12 @@
             </div>
             
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="যুক্ত করুন">
+                <input type="submit" class="btn btn-primary" value="SUBMIT">
             </div>
 
           </form>
     </div>
+  @endif
 </div>
 <!-- Table -->
 <div class="row">
@@ -50,6 +52,7 @@
                 <th>Date</th>
                 <th>Product Name</th>
                 <th>Quantity</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -58,6 +61,13 @@
                 <td>{{ $row->date }}</td>
                 <td>{{ $row->product->product_name }}</td>
                 <td>{{ $row->quantity }}</td>
+                <td>
+                @if(Auth::user()->name == 'Imon')
+                  <a title="Edit" class="btn btn-success btn-sm" href="{{ route('admin.stock.edit',$row->id) }}">
+                      <i class="fa fa-edit"></i>
+                  </a>
+                @endif
+                </td>
               </tr>
               @endforeach
             </tbody>

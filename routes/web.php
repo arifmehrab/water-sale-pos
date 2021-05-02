@@ -68,6 +68,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
      Route::put('/sohpcost/update/{id}','ShopcostController@update')->name('shopcost.update');
      Route::get('/sohpcost-bank','ShopcostController@bank')->name('shopcost.bank');
      Route::post('/sohpcost-bank-add','ShopcostController@costbankamount')->name('shopcost.bank.add');
+     Route::delete('/sohpcost/delete/{id}', 'ShopcostController@costDelete')->name('shopcost.delete');
 
 
      //collection route
@@ -104,6 +105,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     Route::get('/stock/edit/{id}','StockController@edit')->name('stock.edit');
     Route::put('/stock/update/{id}','StockController@update')->name('stock.update');
     Route::delete('/stock/delete/{id}','StockController@delete')->name('stock.delete');
+    Route::put('/stock/update/{id}','StockController@edit')->name('stock.edit');
+    Route::put('/stock/update/{id}','StockController@update')->name('stock.update');
 
     // Stock
     Route::get('/stock','StockController@index')->name('stock.index');

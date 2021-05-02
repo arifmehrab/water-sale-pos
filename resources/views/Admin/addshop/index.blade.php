@@ -24,7 +24,7 @@
                 <input type="number" class="form-control" id="mobile_number" name="mobile_number">
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="যুক্ত করুন">
+                <input type="submit" class="btn btn-primary" value="SUBMIT">
             </div>
 
           </form>

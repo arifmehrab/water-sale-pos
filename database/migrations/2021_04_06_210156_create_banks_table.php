@@ -18,6 +18,7 @@ class CreateBanksTable extends Migration
             $table->string('user_name');
             $table->string('bank_name');
             $table->string('bank_amount');
+            $table->string('cost_id')->nullable();
             $table->date('date');
             $table->timestamps();
         });

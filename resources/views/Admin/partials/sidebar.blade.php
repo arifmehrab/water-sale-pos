@@ -1,6 +1,8 @@
 @php
     $allstoplist = App\Models\addshop::get();
     $banklist = App\Models\AddBank::get();
+    
+
 @endphp
 <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
     <div class="scrollbar-inner">
@@ -42,12 +44,16 @@
                         </a>
                         <div class="collapse collapse-show" id="sell">
                             <ul class="nav nav-sm flex-column">
+                            
+                                @if(Auth::user()->name == 'Imon')
                                 <li class="nav-item menuhover">
                                     <a href="{{ route('admin.sell.index') }}" class="nav-link">Add Sell</a>
                                 </li>
                                 <li class="nav-item menuhover">
                                     <a href="{{ route('admin.sell.pendinglist') }}" class="nav-link">Sell Pending List</a>
                                 </li>
+                                @endif
+                             
                                 <li class="nav-item menuhover">
                                     <a href="{{ route('admin.invoice.approve.list') }}" class="nav-link">Sell Approved List</a>
                                 </li>
@@ -77,20 +83,22 @@
                                 <li class="nav-item menuhover">
                                     <a href="{{ route('admin.collection.index') }}" class="nav-link">collection</a>
                                 </li>
+                                @if(Auth::user()->name == 'Imon')
                                 <li class="nav-item menuhover">
                                     <a href="{{ route('admin.return.index') }}" class="nav-link">Return</a>
                                 </li>
+                                @endif
                             </ul>
                         </div>
                     </li>
-
+                    @if(Auth::user()->name == 'Imon')
                     <li class="nav-item menuhover">
                         <a class="nav-link" href="{{ route('admin.addshop.index') }}">
                             <i class="fas fa-cart-plus text-primary"></i>
                             <span class="nav-link-text">ADD SHOP</span>
                         </a>
                     </li>
-
+                    @endif
                     <li class="nav-item menuhover">
                         <a class="nav-link" href="{{ route('admin.stock.index') }}">
                             <i class="fas fa-coins text-primary"></i>
@@ -114,12 +122,14 @@
                         </a>
                         <div class="collapse collapse-show" id="bank">
                             <ul class="nav nav-sm flex-column">
+                            @if(Auth::user()->name == 'Imon')
                                 <li class="nav-item menuhover">
                                     <a href="{{ route('admin.bank.withdraw') }}" class="nav-link">Withdraw to Bank</a>
                                 </li>
                                 <li class="nav-item menuhover">
                                     <a href="{{ route('admin.bank.add') }}" class="nav-link">Add Bank</a>
                                 </li>
+                            @endif
                             <li class="nav-item ">
                                     <a class="nav-link menuhover" href="#Bank_list" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples1">
                                         <i class="fas fa-industry text-primary"></i>

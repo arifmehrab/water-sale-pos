@@ -14,7 +14,7 @@
 
             <div class="form-group">
                 <label class="form-control-label" for="date">Date</label>
-                <input type="date" class="form-control" id="date" name="date" required>
+                <input type="date" style="width: 15%;" class="form-control" id="date" name="date" required>
             </div>
 
             <input type="hidden" name="collection_no" value="{{ $collection_no }}">
