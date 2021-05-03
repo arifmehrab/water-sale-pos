@@ -42,16 +42,6 @@
                     <a title="View" class="btn btn-primary btn-sm" href="{{ route('admin.shop.view', $row->id) }}">
                         <i class="fas fa-eye"></i>
                     </a>
-                    @if(Auth::user()->name == 'Imon')
-                      <button title="Delete" type="button" class="btn btn-danger btn-sm" onclick="itemdelete({{ $row->id }})">
-                          <i class="fa fa-trash"></i>
-                      </button>
-                      
-                      <form id="delete_form_{{ $row->id }}" method="POST" style="display: none" action="{{ route('admin.collection.delete', $row->id) }}">
-                        @csrf
-                        @method('DELETE') 
-                     </form>
-                     @endif
                 </td>
               </tr>
              @endforeach
